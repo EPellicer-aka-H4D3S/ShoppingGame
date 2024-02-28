@@ -2,9 +2,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 [System.Serializable]
-public class InventorySlot 
+public class InventorySlot
 {
     public int Amount => amount;
     public ItemBasic Item => item;

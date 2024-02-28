@@ -54,33 +54,29 @@ public class InventoryUIElement: MonoBehaviour, IBeginDragHandler, IDragHandler,
 
     public void OnEndDrag(PointerEventData eventData)
     {
+        
+        bool consumable = item is ConsumableItem;
+
         // Find objects within canvas
         var results = new List<RaycastResult>();
         raycaster.Raycast(eventData, results);
         foreach (var hit in results)
         {
-            Debug.Log(hit.gameObject.name);
-        }
+            var nextInventory = hit.gameObject.GetComponent<InventoryUI>();
+            var consumer = hit.gameObject.GetComponent<IConsume>();
+            //Debug.Log(hit.gameObject.name);
 
-        // Find scene objects            
-        RaycastHit2D hitData = Physics2D.GetRayIntersection(Camera.main.ScreenPointToRay(Input.mousePosition));
-
-        if (hitData)
-        {
-            var inventory = hitData.collider.GetComponent<InventoryUI>();
-            var consumer = hitData.collider.GetComponent<IConsume>();
-            bool consumable = item is ConsumableItem;
-
-            if ((consumer != null) && consumable)
+            if((consumer != null) && consumable)
             {
                 (item as ConsumableItem).Use(consumer);
                 inventory.ItemUsed(item);
             }
 
-            if (inventory != null)
+            if (nextInventory != null)
             {
-                Debug.Log(inventory);
-                transform.SetParent(inventory.GetComponentInParent<Transform>());
+                nextInventory.Inventory.AddItem(item);
+                inventory.Inventory.RemoveItem(item);
+                inventory = nextInventory;
             }
         }
 
