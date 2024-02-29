@@ -6,4 +6,5 @@ public class ItemBasic : ScriptableObject
     public string Name;
     public Sprite ImageUI;
     public bool IsStackable;
+    public int price;
 }

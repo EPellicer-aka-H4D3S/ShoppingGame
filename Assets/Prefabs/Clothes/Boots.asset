@@ -15,3 +15,4 @@ MonoBehaviour:
   Name: Boots
   ImageUI: {fileID: 7175549890761636373, guid: f0dad579ebaa13a4a86b44e1bd88ba8c, type: 3}
   IsStackable: 0
+  price: 10

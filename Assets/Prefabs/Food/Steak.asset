@@ -15,3 +15,4 @@ MonoBehaviour:
   Name: Steak
   ImageUI: {fileID: 761055722855910038, guid: f0dad579ebaa13a4a86b44e1bd88ba8c, type: 3}
   IsStackable: 1
+  price: 1

@@ -15,3 +15,4 @@ MonoBehaviour:
   Name: Axe
   ImageUI: {fileID: 6458994678821510648, guid: f0dad579ebaa13a4a86b44e1bd88ba8c, type: 3}
   IsStackable: 0
+  price: 15

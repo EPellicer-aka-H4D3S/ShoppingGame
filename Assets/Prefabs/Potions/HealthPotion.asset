@@ -15,4 +15,5 @@ MonoBehaviour:
   Name: HealthPotion
   ImageUI: {fileID: 8507558670831626303, guid: f0dad579ebaa13a4a86b44e1bd88ba8c, type: 3}
   IsStackable: 1
+  price: 5
   HealthPoints: 5
