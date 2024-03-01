@@ -1,22 +1,18 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 
 public class ScreenManager : MonoBehaviour
 {
     void Update()
     {
-        if (Input.GetKeyDown("Start"))
+        if (Input.GetKeyDown(KeyCode.Return))
         {
-            SceneManager.LoadScene("Gameplay");
+            SceneManager.LoadScene("ShopGame");
         }
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            Application.Quit();
+            SceneManager.LoadScene("Ending");
         }
         
     }
