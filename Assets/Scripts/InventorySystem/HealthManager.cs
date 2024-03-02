@@ -7,7 +7,16 @@ using UnityEngine.UI;
 
 public class HealthManager: MonoBehaviour
 {
-    public Slider healthBar;
+    private Slider healthBar;
+    private void Start()
+    {
+        healthBar = GetComponentInChildren<Slider>();
+
+        if (healthBar == null)
+        {
+            Debug.LogError("No se encontró el slider de salud (HealthBar) en el Canvas.");
+        }
+    }
     public void ConsumeItem(ConsumableItem consumableItem)
     {
         if (consumableItem is ItemHealthPotion)

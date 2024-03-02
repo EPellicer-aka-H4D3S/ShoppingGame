@@ -66,14 +66,6 @@ public class InventoryUIElement: MonoBehaviour, IBeginDragHandler, IDragHandler,
             var consumer = hit.gameObject.GetComponent<IConsume>();
             //Debug.Log(hit.gameObject.name);
 
-            if((consumer != null) && consumable)
-            {
-                (item as ConsumableItem).Use(consumer);
-                inventory.ItemUsed(item);
-                HealthManager.ConsumeItem(item);
-                Debug.Log("test Health Manager input");
-            }
-
             if (nextInventory != null)
             {
                 nextInventory.Inventory.AddItem(item);
