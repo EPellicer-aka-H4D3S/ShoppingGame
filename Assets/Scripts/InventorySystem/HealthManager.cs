@@ -3,17 +3,29 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class NewBehaviourScript : MonoBehaviour
+public class HealthManager: MonoBehaviour
 {
+    public InventoryUI playerInventoriUI;
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse1)&&!Input.GetKey(KeyCode.Mouse0))
-        {//El raycast no funciona, tenia pensado hacer un if para ver si el cursor esta encima de un consumable y al mismo tiempo encima del playerInventory
-            RaycastHit[] result = Physics.RaycastAll(Input.mousePosition+Vector3.back, Input.mousePosition + Vector3.forward * 10);
+        if (input.GetKeyDown(KeyCode.Mouse1) && !Input.GeyKey(KeyCode.Mouse0)) 
+        {
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
+            if(Physycs,Raycast(ray, out hit))
+            {
+                InventoryUIElement inventoryElement = hit.collider.GetComponent<InventoryUIElement>();
+               if (inventoryElement != null)
+               {
+                        ItemBasic item = inventoryElement.item;
+                    if (item is IteamHealthPotion) 
+                    {
+                        IncrementarVida((item as ItemHealthPotion).HealthPoints);
+                        playerInventoryUI.Inventory.RemoveItem(item);
+                    }
+               }
 
-            Debug.Log(result[0]);
-            Debug.Log(result[1]);
-            Debug.Log(result[2]);
+            }
         }
     }
     
