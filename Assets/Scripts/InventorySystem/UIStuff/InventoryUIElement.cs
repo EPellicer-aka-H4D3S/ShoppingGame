@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class InventoryUIElement: MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
+public class InventoryUIElement: MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler, IPointerClickHandler
 {
     public Image Image;
     public TextMeshProUGUI AmountText;
@@ -12,7 +12,7 @@ public class InventoryUIElement: MonoBehaviour, IBeginDragHandler, IDragHandler,
     private Canvas canvas;
     private GraphicRaycaster raycaster;
     private Transform parent;
-    private ItemBasic item;
+    public ItemBasic item;
     private InventoryUI inventory;
 
     public void SetStuff(InventorySlot slot, InventoryUI inventory)
@@ -70,6 +70,8 @@ public class InventoryUIElement: MonoBehaviour, IBeginDragHandler, IDragHandler,
             {
                 (item as ConsumableItem).Use(consumer);
                 inventory.ItemUsed(item);
+                HealthManager.ConsumeItem(item);
+                Debug.Log("test Health Manager input");
             }
 
             if (nextInventory != null)
@@ -92,5 +94,17 @@ public class InventoryUIElement: MonoBehaviour, IBeginDragHandler, IDragHandler,
 
         // And centering item position
         transform.localPosition = Vector3.zero;
+    }
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        if (eventData.button == PointerEventData.InputButton.Right)
+        {
+            Debug.Log("test on point click");
+            if (item is ConsumableItem)
+            {   
+                HealthManager healthManager = FindObjectOfType<HealthManager>();
+                healthManager.ConsumeItem(item as ConsumableItem);
+            }
+        }
     }
 }

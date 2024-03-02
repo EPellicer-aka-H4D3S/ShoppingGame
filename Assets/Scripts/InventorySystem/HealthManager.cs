@@ -1,32 +1,38 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class HealthManager: MonoBehaviour
 {
-    public InventoryUI playerInventoriUI;
-    private void Update()
+    public Slider healthBar;
+    public void ConsumeItem(ConsumableItem consumableItem)
     {
-        if (input.GetKeyDown(KeyCode.Mouse1) && !Input.GeyKey(KeyCode.Mouse0)) 
+        if (consumableItem is ItemHealthPotion)
         {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
-            if(Physycs,Raycast(ray, out hit))
-            {
-                InventoryUIElement inventoryElement = hit.collider.GetComponent<InventoryUIElement>();
-               if (inventoryElement != null)
-               {
-                        ItemBasic item = inventoryElement.item;
-                    if (item is IteamHealthPotion) 
-                    {
-                        IncrementarVida((item as ItemHealthPotion).HealthPoints);
-                        playerInventoryUI.Inventory.RemoveItem(item);
-                    }
-               }
+            int healthPoints = (consumableItem as ItemHealthPotion).HealthPoints;
+            UpdateHealthSlider(healthPoints);
+            Debug.Log(healthPoints);
+        }
+        else
+        {
 
-            }
         }
     }
-    
+     private void UpdateHealthSlider(int healthPoints)
+    {
+        healthBar.value += healthPoints;
+    }
+
+    public void Use(ConsumableItem consumableItem)
+    {
+        ConsumeItem(consumableItem);
+    }
+
+    internal static void ConsumeItem(ItemBasic item)
+    {
+        throw new NotImplementedException();
+    }
 }
