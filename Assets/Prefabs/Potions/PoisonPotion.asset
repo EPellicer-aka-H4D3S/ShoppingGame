@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: PoisonPotion
   m_EditorClassIdentifier: 
   itemName: PoisonPotion
-  imageUI: {fileID: 21300000, guid: 36864e86c9eb5974199a85ec34cb4b20, type: 3}
+  imageUI: {fileID: 21300000, guid: 30571f7498434f74c80cfe47d7ddf832, type: 3}
   isStackable: 1
   price: 10
   poisonPoints: 30
