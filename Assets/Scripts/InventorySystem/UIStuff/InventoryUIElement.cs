@@ -90,9 +90,9 @@ public class InventoryUIElement: MonoBehaviour, IBeginDragHandler, IDragHandler,
                 nextInventory.Inventory.AddItem(item);
                 inventory.Inventory.RemoveItem(item);
 
-                var nextVal = int.Parse(inventory.GetComponentInChildren<TextMeshProUGUI>().text)-item.price;
+                var nextVal = int.Parse(inventory.GetComponentInChildren<TextMeshProUGUI>().text) + item.price;
                 inventory.GetComponentInChildren<TextMeshProUGUI>().SetText(nextVal.ToString());
-                nextVal = int.Parse(nextInventory.GetComponentInChildren<TextMeshProUGUI>().text) + item.price;
+                nextVal = int.Parse(nextInventory.GetComponentInChildren<TextMeshProUGUI>().text) - item.price;
                 nextInventory.GetComponentInChildren<TextMeshProUGUI>().SetText(nextVal.ToString());
 
 
