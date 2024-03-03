@@ -17,11 +17,13 @@ public class HealthManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
         healthBar = GetComponentInChildren<Slider>();
     }
-    public static HealthManager Instance;
 
+    public static HealthManager Instance;
     private Slider healthBar;
+
     public void ApplyHealth(int healthPoints)
     {
         healthBar.value += healthPoints;
@@ -31,8 +33,6 @@ public class HealthManager : MonoBehaviour
         healthBar.value -= damagePoints;
     }
 }
-
-
 
     /*
     private Slider healthBar;
@@ -60,4 +60,3 @@ public class HealthManager : MonoBehaviour
     }
 
     */
-

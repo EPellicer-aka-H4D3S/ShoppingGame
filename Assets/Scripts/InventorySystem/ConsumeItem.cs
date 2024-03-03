@@ -18,10 +18,6 @@ public class ConsumeItem : MonoBehaviour, IConsume
             int poisonPoints = (item as ItemPoisonPotion).PoisonPoints;
             healthManager.ApplyDamage(poisonPoints);
         }
-        else
-        {
-           // si hay otros consumibles, aqui 
-        }
     }
 }
 
