@@ -8,13 +8,11 @@ using UnityEngine.UI;
 public class LocalizedText : MonoBehaviour
 {
     public string textKey;
-    private Text textValue;
-    //private TMP_Text _textValue;
+    private TMP_Text textValue;
 
     void Start()
     {
-        textValue = GetComponent<Text>();
-        //_textValue = GetComponent<TMP_Text>();
+        textValue = GetComponent<TMP_Text>();
         SetText();
     }
 

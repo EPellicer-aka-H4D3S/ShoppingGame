@@ -16,7 +16,12 @@ public class Localizer : MonoBehaviour
 
     private void Awake()
     {
+        if (instance != null)
+        {
+            Destroy(this.gameObject);
+        }
         instance = this;
+        DontDestroyOnLoad(gameObject);
         currentLanguage = defaultLanguage;
         LoadLanguageSheet();
     }

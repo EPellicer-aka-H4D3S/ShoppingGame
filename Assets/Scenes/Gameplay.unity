@@ -306,8 +306,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73a31770e07549b4fad7b428eabf13d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Inventory: {fileID: 11400000, guid: 79da491f0d466044d9b5805ecc3f38f0, type: 2}
-  ElementPrefab: {fileID: 234651220, guid: d92d353398e68e5408391edc6ce41434, type: 3}
+  inventory: {fileID: 11400000, guid: 79da491f0d466044d9b5805ecc3f38f0, type: 2}
+  elementPrefab: {fileID: 234651220, guid: d92d353398e68e5408391edc6ce41434, type: 3}
 --- !u!1 &333921230
 GameObject:
   m_ObjectHideFlags: 0
@@ -319,6 +319,7 @@ GameObject:
   - component: {fileID: 333921231}
   - component: {fileID: 333921233}
   - component: {fileID: 333921232}
+  - component: {fileID: 333921234}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -393,10 +394,10 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 50
+  m_fontSize: 45
   m_fontSizeBase: 50
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
@@ -443,6 +444,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 333921230}
   m_CullTransparentMesh: 1
+--- !u!114 &333921234
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 333921230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3618c7af712f6594a8a575489329fe4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textKey: Leave
 --- !u!1 &388441838
 GameObject:
   m_ObjectHideFlags: 0
@@ -1056,7 +1070,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1123703210}
         m_TargetAssemblyTypeName: LevelManager, Assembly-CSharp
-        m_MethodName: changeScene
+        m_MethodName: ChangeScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1133,7 +1147,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8dcb7052e7abe384e8f599f481154b00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: Ending
 --- !u!4 &1123703211
 Transform:
   m_ObjectHideFlags: 0
@@ -1615,8 +1628,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73a31770e07549b4fad7b428eabf13d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Inventory: {fileID: 11400000, guid: 74259a443d6056742931cdf040abaeab, type: 2}
-  ElementPrefab: {fileID: 234651220, guid: d92d353398e68e5408391edc6ce41434, type: 3}
+  inventory: {fileID: 11400000, guid: 74259a443d6056742931cdf040abaeab, type: 2}
+  elementPrefab: {fileID: 234651220, guid: d92d353398e68e5408391edc6ce41434, type: 3}
 --- !u!1 &1984369851
 GameObject:
   m_ObjectHideFlags: 0

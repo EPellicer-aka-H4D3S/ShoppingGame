@@ -3,8 +3,8 @@
 public enum Language
 {
     English = 1,
-    Catalan,
-    Spanish
+    Catalan = 2,
+    Spanish = 3,
 }
 
 public class LanguageData 

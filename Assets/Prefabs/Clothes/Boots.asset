@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed77d0ce151646b49962b6eb6a095645, type: 3}
   m_Name: Boots
   m_EditorClassIdentifier: 
-  Name: Boots
-  ImageUI: {fileID: 7175549890761636373, guid: f0dad579ebaa13a4a86b44e1bd88ba8c, type: 3}
-  IsStackable: 0
+  itemName: Boots
+  imageUI: {fileID: 7175549890761636373, guid: f0dad579ebaa13a4a86b44e1bd88ba8c, type: 3}
+  isStackable: 0
   price: 10

@@ -60,8 +60,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e19fc714f78418c45aa57a229569c636, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Image: {fileID: 5942939155442774167}
-  AmountText: {fileID: 4894285389737324033}
+  image: {fileID: 5942939155442774167}
+  amountText: {fileID: 4894285389737324033}
   item: {fileID: 0}
 --- !u!114 &6004142133801907285
 MonoBehaviour:

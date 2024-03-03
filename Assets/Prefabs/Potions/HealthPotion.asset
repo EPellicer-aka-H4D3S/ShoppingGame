@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b97c9779e5c8eec4f821c3babbd54e6e, type: 3}
   m_Name: HealthPotion
   m_EditorClassIdentifier: 
-  Name: HealthPotion
-  ImageUI: {fileID: 8507558670831626303, guid: f0dad579ebaa13a4a86b44e1bd88ba8c, type: 3}
-  IsStackable: 1
+  itemName: HealthPotion
+  imageUI: {fileID: 8507558670831626303, guid: f0dad579ebaa13a4a86b44e1bd88ba8c, type: 3}
+  isStackable: 1
   price: 5
-  HealthPoints: 5
+  healthPoints: 5

@@ -378,6 +378,7 @@ GameObject:
   - component: {fileID: 860107649}
   - component: {fileID: 860107651}
   - component: {fileID: 860107650}
+  - component: {fileID: 860107652}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -401,8 +402,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000022888, y: -0.000023842}
-  m_SizeDelta: {x: 1320.5983, y: 134.3842}
+  m_AnchoredPosition: {x: 0.000022888, y: 0}
+  m_SizeDelta: {x: 1320.5983, y: 835.3092}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &860107650
 MonoBehaviour:
@@ -424,7 +425,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: And forward you embarked onto adventure...
+  m_text: And moving forward you embark onto adventure...
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ad49c74e4908d9f4b902424b4684c74b, type: 2}
   m_sharedMaterial: {fileID: 2879743631068867939, guid: ad49c74e4908d9f4b902424b4684c74b,
@@ -455,9 +456,9 @@ MonoBehaviour:
   m_fontSize: 100
   m_fontSizeBase: 100
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
-  m_fontSizeMax: 72
+  m_fontSizeMax: 100
   m_fontStyle: 0
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
@@ -502,6 +503,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 860107648}
   m_CullTransparentMesh: 1
+--- !u!114 &860107652
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 860107648}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3618c7af712f6594a8a575489329fe4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textKey: FinalMessege
 --- !u!1 &910228106
 GameObject:
   m_ObjectHideFlags: 0
