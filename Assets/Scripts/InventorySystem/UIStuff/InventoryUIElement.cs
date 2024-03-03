@@ -4,6 +4,25 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
+/*
+Dear programmer:
+
+When Harlock modified this code to work with all the others codes and the sacred Solid Principles, only god and
+I knew how it worked.
+
+Now, only god knows it. The fact that this spaghetti code exists proves that God is either impotent to alter his universe or ignorant to the horrors taking place in his kingdom. This prism of computer data is more than holy bitts. It is a physical declaration of mankind's contempt for the natural order.
+
+Therefore, if you are trying to optimize
+this sacrated routine and it fails (most surely),
+please increase this holy counter as a
+warning for the next benighted person:
+
+total_hours_wasted_here = 254 
+
+May the Omnissiah bless you in his glory
+*/
+
+
 public class InventoryUIElement: MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler, IPointerClickHandler
 {
     public Image Image;
@@ -91,11 +110,10 @@ public class InventoryUIElement: MonoBehaviour, IBeginDragHandler, IDragHandler,
     {
         if (eventData.button == PointerEventData.InputButton.Right)
         {
-            Debug.Log("test on point click");
             if (item is ConsumableItem)
             {   
-                HealthManager healthManager = FindObjectOfType<HealthManager>();
-                healthManager.ConsumeItem(item as ConsumableItem);
+                ConsumeItem consumeItem = new ConsumeItem();
+                consumeItem.Use(item as ConsumableItem);
             }
         }
     }

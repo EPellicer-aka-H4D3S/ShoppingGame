@@ -5,17 +5,40 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class HealthManager: MonoBehaviour
+public class HealthManager : MonoBehaviour
 {
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+        healthBar = GetComponentInChildren<Slider>();
+    }
+    public static HealthManager Instance;
+
+    private Slider healthBar;
+    public void ApplyHealth(int healthPoints)
+    {
+        healthBar.value += healthPoints;
+    }
+    public void ApplyDamage(int damagePoints)
+    {
+        healthBar.value -= damagePoints;
+    }
+}
+
+
+
+    /*
     private Slider healthBar;
     private void Start()
     {
         healthBar = GetComponentInChildren<Slider>();
-
-        if (healthBar == null)
-        {
-            Debug.LogError("No se encontró el slider de salud (HealthBar) en el Canvas.");
-        }
     }
     public void ConsumeItem(ConsumableItem consumableItem)
     {
@@ -24,10 +47,6 @@ public class HealthManager: MonoBehaviour
             int healthPoints = (consumableItem as ItemHealthPotion).HealthPoints;
             UpdateHealthSlider(healthPoints);
             Debug.Log(healthPoints);
-        }
-        else
-        {
-
         }
     }
      private void UpdateHealthSlider(int healthPoints)
@@ -40,8 +59,5 @@ public class HealthManager: MonoBehaviour
         ConsumeItem(consumableItem);
     }
 
-    internal static void ConsumeItem(ItemBasic item)
-    {
-        throw new NotImplementedException();
-    }
-}
+    */
+
