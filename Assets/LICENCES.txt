@@ -1,0 +1,30 @@
+TabletopAudio Song Attribution for ShoppingGame
+
+All tracks used in this game are attributed under the Creative Commons Attribution-NonCommercial-NoDerivs 4.0 International License to TabletopAudio
+
+1. Middle_Earth_Dawn
+   - URL: http://tabletopaudio.com/index.html?62
+   - Composer: TabletopAudio
+   - License: CC BY-NC-ND 4.0 International
+   - Source: TabletopAudio (https://tabletopaudio.com)
+
+2. Rainy_Village
+   - URL: http://tabletopaudio.com/index.html?235
+   - Composer: TabletopAudio
+   - License: CC BY-NC-ND 4.0 International
+   - Source: TabletopAudio (https://tabletopaudio.com)
+
+3. Adventure_Supply
+   - URL: http://tabletopaudio.com/index.html?338
+   - Composer: TabletopAudio
+   - License: CC BY-NC-ND 4.0 International
+   - Source: TabletopAudio (https://tabletopaudio.com)
+
+CC0 1.0 Universal (CC0 1.0) Public Domain Dedication
+
+The following assets used in this game are provided under the CC0 1.0 Universal (CC0 1.0) Public Domain Dedication:
+	Sword.png
+	Meat.png
+	HealthPotion.png
+	Boots.png
+	GoldCoin.png
