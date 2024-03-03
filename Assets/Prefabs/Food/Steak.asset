@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Steak
   m_EditorClassIdentifier: 
   itemName: Steak
-  imageUI: {fileID: 761055722855910038, guid: f0dad579ebaa13a4a86b44e1bd88ba8c, type: 3}
+  imageUI: {fileID: 21300000, guid: 42326f40a4952944998d97e9b2783bd2, type: 3}
   isStackable: 1
-  price: 5
+  price: 1

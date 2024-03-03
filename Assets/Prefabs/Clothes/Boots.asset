@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Boots
   m_EditorClassIdentifier: 
   itemName: Boots
-  imageUI: {fileID: 7175549890761636373, guid: f0dad579ebaa13a4a86b44e1bd88ba8c, type: 3}
+  imageUI: {fileID: 21300000, guid: 02b9e6f8699ee0c4cb2c316a9058e989, type: 3}
   isStackable: 0
   price: 10

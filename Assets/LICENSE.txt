@@ -26,5 +26,6 @@ The following assets used in this game are provided under the CC0 1.0 Universal 
 	Sword.png
 	Meat.png
 	HealthPotion.png
+	Poison.png
 	Boots.png
 	GoldCoin.png
