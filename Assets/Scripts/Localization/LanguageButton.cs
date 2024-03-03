@@ -3,10 +3,10 @@ using UnityEngine.EventSystems;
 
 public class LanguageButton : MonoBehaviour, IPointerClickHandler
 {
-    public Language Language;
+    public Language language;
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        Localizer.SetLanguage(Language);
+        Localizer.SetLanguage(language);
     }
 }

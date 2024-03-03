@@ -25,8 +25,8 @@ May the Omnissiah bless you in his glory
 
 public class InventoryUIElement: MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler, IPointerClickHandler
 {
-    public Image Image;
-    public TextMeshProUGUI AmountText;
+    public Image image;
+    public TextMeshProUGUI amountText;
     public ItemBasic item;
 
     private Canvas canvas;
@@ -36,9 +36,9 @@ public class InventoryUIElement: MonoBehaviour, IBeginDragHandler, IDragHandler,
 
     public void SetStuff(InventorySlot slot, InventoryUI inventory)
     {
-        Image.sprite = slot.Item.ImageUI;
-        AmountText.text = slot.Amount.ToString();
-        AmountText.enabled = slot.Amount > 1;
+        image.sprite = slot.Item.imageUI;
+        amountText.text = slot.Amount.ToString();
+        amountText.enabled = slot.Amount > 1;
 
         item = slot.Item;
         this.inventory = inventory;
@@ -80,8 +80,8 @@ public class InventoryUIElement: MonoBehaviour, IBeginDragHandler, IDragHandler,
 
             if (nextInventory != null)
             {
-                nextInventory.Inventory.AddItem(item);
-                inventory.Inventory.RemoveItem(item);
+                nextInventory.inventory.AddItem(item);
+                inventory.inventory.RemoveItem(item);
 
                 var nextVal = int.Parse(inventory.GetComponentInChildren<TextMeshProUGUI>().text) + item.price;
                 inventory.GetComponentInChildren<TextMeshProUGUI>().SetText(nextVal.ToString());
@@ -102,7 +102,7 @@ public class InventoryUIElement: MonoBehaviour, IBeginDragHandler, IDragHandler,
         {
             if (item is ConsumableItem&&inventory.gameObject.name == "InventoryPlayer")
             {
-                inventory.Inventory.RemoveItem(item);
+                inventory.inventory.RemoveItem(item);
                 ConsumeItem consumeItem = gameObject.AddComponent<ConsumeItem>();
                 consumeItem.Use(item as ConsumableItem);
             }

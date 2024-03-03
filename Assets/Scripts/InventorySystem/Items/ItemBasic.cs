@@ -3,8 +3,8 @@
 [CreateAssetMenu(fileName = "Item", menuName = "Inventory System/Items/Item")]
 public class ItemBasic : ScriptableObject
 {
-    public string Name;
-    public Sprite ImageUI;
-    public bool IsStackable;
+    public string itemName;
+    public Sprite imageUI;
+    public bool isStackable;
     public int price;
 }

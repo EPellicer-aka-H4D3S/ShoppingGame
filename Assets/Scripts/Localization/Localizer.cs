@@ -3,38 +3,38 @@ using UnityEngine;
 
 public class Localizer : MonoBehaviour
 {
-    public static Localizer Instance;
+    public static Localizer instance;
 
-    Dictionary<string, LanguageData> Data;
-    private Language _currentLanguage;
-    public Language DefaultLanguage;
+    Dictionary<string, LanguageData> data;
+    private Language currentLanguage;
+    public Language defaultLanguage;
 
-    public TextAsset DataSheet;
+    public TextAsset dataSheet;
     
     public delegate void LanguageChangeDelegate();
     public static LanguageChangeDelegate OnLanguageChangeDelegate;
 
     private void Awake()
     {
-        Instance = this;
-        _currentLanguage = DefaultLanguage;
+        instance = this;
+        currentLanguage = defaultLanguage;
         LoadLanguageSheet();
     }
 
     public static string GetText(string textKey)
     {
-        return Instance.Data[textKey].GetText(Instance._currentLanguage);
+        return instance.data[textKey].GetText(instance.currentLanguage);
     }
 
     public static void SetLanguage(Language language)
     {
-        Instance._currentLanguage = language;
+        instance.currentLanguage = language;
         OnLanguageChangeDelegate?.Invoke();
     }
 
     void LoadLanguageSheet()
     {
-        string[] lines = DataSheet.text.Split(new char[]{ '\n'});
+        string[] lines = dataSheet.text.Split(new char[]{ '\n'});
 
         for (int i = 1; i < lines.Length; i++)
         {
@@ -48,7 +48,7 @@ public class Localizer : MonoBehaviour
 
         var languageData = new LanguageData(entry);
 
-        if (Data == null) Data = new Dictionary<string, LanguageData>();
-        Data.Add(entry[0], languageData);
+        if (data == null) data = new Dictionary<string, LanguageData>();
+        data.Add(entry[0], languageData);
     }
 }

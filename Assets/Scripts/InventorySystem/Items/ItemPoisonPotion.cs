@@ -5,7 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Item", menuName = "Inventory System/Items/PoisionPotion")]
 public class ItemPoisonPotion : ConsumableItem
 {
-    public int PoisonPoints;
+    public int poisonPoints;
 
     public override void Use(IConsume consumer)
     {

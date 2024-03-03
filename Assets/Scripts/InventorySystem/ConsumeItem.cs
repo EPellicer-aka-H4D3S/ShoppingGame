@@ -10,16 +10,13 @@ public class ConsumeItem : MonoBehaviour, IConsume
 
         if (item is ItemHealthPotion)
         {
-            int healthPoints = (item as ItemHealthPotion).HealthPoints;
+            int healthPoints = (item as ItemHealthPotion).healthPoints;
             healthManager.ApplyHealth(healthPoints);
         }
         else if (item is ItemPoisonPotion)
         {
-            int poisonPoints = (item as ItemPoisonPotion).PoisonPoints;
+            int poisonPoints = (item as ItemPoisonPotion).poisonPoints;
             healthManager.ApplyDamage(poisonPoints);
         }
     }
 }
-
-
-

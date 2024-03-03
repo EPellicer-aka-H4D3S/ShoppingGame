@@ -1,33 +1,31 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "NewInventory", menuName = "Inventory System/Inventory")]
 public class Inventory : ScriptableObject
 {
     [SerializeField]
-    List<InventorySlot> Slots;
+    List<InventorySlot> slots;
 
-    public int Length => Slots.Count;
+    public int Length => slots.Count;
 
     public delegate void InventoryChangeDelegate();
     public InventoryChangeDelegate OnInventoryChange;
 
     public void AddItem(ItemBasic item)
     {
-        if (Slots == null) Slots = new List<InventorySlot>();
+        if (slots == null) slots = new List<InventorySlot>();
 
         var slot = GetSlot(item);
 
-        if (slot != null && item.IsStackable)
+        if (slot != null && item.isStackable)
         {
             slot.AddOne();
         }
         else
         {
             slot = new InventorySlot(item);
-            Slots.Add(slot);
+            slots.Add(slot);
         }
 
         OnInventoryChange?.Invoke();
@@ -35,7 +33,7 @@ public class Inventory : ScriptableObject
 
     public void RemoveItem(ItemBasic item)
     {
-        if (Slots == null) return;
+        if (slots == null) return;
 
         var slot = GetSlot(item);
 
@@ -51,15 +49,15 @@ public class Inventory : ScriptableObject
 
     private void RemoveSlot(InventorySlot slot)
     {
-        Slots.Remove(slot);
+        slots.Remove(slot);
     }
 
     private InventorySlot GetSlot(ItemBasic item)
     {
-        for (int i = 0; i < Slots.Count; i++)
+        for (int i = 0; i < slots.Count; i++)
         {
-            if (Slots[i].HasItem(item)) 
-                return Slots[i];
+            if (slots[i].HasItem(item)) 
+                return slots[i];
         }
 
         return null;
@@ -67,6 +65,6 @@ public class Inventory : ScriptableObject
 
     public InventorySlot GetSlot(int i)
     {
-        return Slots[i];
+        return slots[i];
     }
 }

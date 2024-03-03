@@ -3,30 +3,30 @@ using UnityEngine;
 
 public class InventoryUI : MonoBehaviour
 {
-    public Inventory Inventory;
-    public InventoryUIElement ElementPrefab;
+    public Inventory inventory;
+    public InventoryUIElement elementPrefab;
 
     List<GameObject> shownObjects;
 
     void Start()
     {
-        ShowInventory(Inventory);
+        ShowInventory(inventory);
     }
 
     private void OnEnable()
     {
-        Inventory.OnInventoryChange += UpdateInventory;
+        inventory.OnInventoryChange += UpdateInventory;
     }
 
     private void OnDisable()
     {
-        Inventory.OnInventoryChange -= UpdateInventory;
+        inventory.OnInventoryChange -= UpdateInventory;
     }
 
     private void UpdateInventory()
     {
         ClearInventory();
-        ShowInventory(Inventory);
+        ShowInventory(inventory);
     }
 
     private void ClearInventory()
@@ -52,13 +52,13 @@ public class InventoryUI : MonoBehaviour
 
     private GameObject MakeNewEntry(InventorySlot inventorySlot)
     {
-        var element = GameObject.Instantiate(ElementPrefab, Vector3.zero, Quaternion.identity, transform);
+        var element = GameObject.Instantiate(elementPrefab, Vector3.zero, Quaternion.identity, transform);
         element.SetStuff(inventorySlot, this);
         return element.gameObject;
     }
 
     public void ItemUsed(ItemBasic item)
     {
-        Inventory.RemoveItem(item);
+        inventory.RemoveItem(item);
     }
 }

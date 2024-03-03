@@ -28,7 +28,7 @@ public class InventorySlot
 
     internal bool CanHold(ItemBasic item)
     {
-        if (item.IsStackable) return (item == this.item);
+        if (item.isStackable) return (item == this.item);
 
         return false;
     }
@@ -48,5 +48,3 @@ public class InventorySlot
         return amount < 1;
     }
 }
-
-

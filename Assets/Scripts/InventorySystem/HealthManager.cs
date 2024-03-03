@@ -9,9 +9,9 @@ public class HealthManager : MonoBehaviour
 {
     private void Awake()
     {
-        if (Instance == null)
+        if (instance == null)
         {
-            Instance = this;
+            instance = this;
         }
         else
         {
@@ -21,7 +21,7 @@ public class HealthManager : MonoBehaviour
         healthBar = GetComponentInChildren<Slider>();
     }
 
-    public static HealthManager Instance;
+    public static HealthManager instance;
     private Slider healthBar;
 
     public void ApplyHealth(int healthPoints)
